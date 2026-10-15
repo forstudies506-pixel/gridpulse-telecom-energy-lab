@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="GridPulse — intelligence for industries." />
+    <title>Intelligence For Industries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true">
+      <video class="bg-video" autoplay muted loop playsinline preload="metadata">
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260809_012548_ef22562c-c0ae-4816-ad9d-f8922af4e6a7.mp4" type="video/mp4" />
+      </video>
+      <div class="bg-shade"></div>
+    </div>
+
+    <div class="page" id="home">
+      <header class="site-header" aria-label="Primary navigation">
+        <a class="logo-button" href="#home" aria-label="GridPulse home">
+          <img src="assets/logo.webp" alt="" width="52" height="52" />
+        </a>
+
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a class="is-active" href="#home">Home</a>
+          <a href="lab.html">Product</a>
+          <a href="#case-studies">Case Studies</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="sign-in" href="#contact">Sign in</a>
+
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-controls="mobile-menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </header>
+
+      <main class="hero" id="product">
+        <div class="hero-inner">
+          <div class="trust-row anim" style="--d: 0.05s">
+            <div class="trust-avatars" aria-label="Microsoft, Amazon and Google">
+              <span class="trust-avatar trust-avatar-one"><span><i class="fa-brands fa-microsoft" aria-hidden="true"></i></span></span>
+              <span class="trust-avatar trust-avatar-two"><span><i class="fa-brands fa-amazon" aria-hidden="true"></i></span></span>
+              <span class="trust-avatar trust-avatar-three"><span><i class="fa-brands fa-google" aria-hidden="true"></i></span></span>
+            </div>
+            <span class="trust-pill">Trusted by 2000+ Enterprises</span>
+          </div>
+
+          <h1 class="headline" aria-label="Intelligence For Industries">
+            <span class="headline-line">Intelligence</span>
+            <span class="headline-line">For Industries</span>
+          </h1>
+
+          <p class="subhead anim" style="--d: 0.28s">
+            Build applications that reason, adapt and collaborate across modern industries<br class="desktop-break" />
+            using a modular AI platform designed for production.
+          </p>
+
+          <button class="cta anim" style="--d: 0.4s" type="button" data-cta>
+            <span>Get Started</span>
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </button>
+        </div>
+      </main>
+
+      <footer class="stats-footer" aria-label="Platform highlights">
+        <div class="stat anim" style="--d: 0.5s">
+          <span class="stat-symbol" aria-hidden="true">&lt;</span>
+          <div class="stat-copy"><strong data-counter data-target="120" data-decimals="0">0</strong><span class="stat-suffix">ms</span><small>Inference Time</small></div>
+        </div>
+        <div class="stat anim" style="--d: 0.58s">
+          <span class="stat-symbol" aria-hidden="true">%</span>
+          <div class="stat-copy"><strong data-counter data-target="99.99" data-decimals="2">0</strong><span class="stat-suffix">%</span><small>Platform Uptime</small></div>
+        </div>
+        <div class="stat anim" style="--d: 0.66s">
+          <span class="stat-symbol" aria-hidden="true">*</span>
+          <div class="stat-copy"><strong data-counter data-target="24" data-decimals="0">0</strong><span class="stat-suffix">/7</span><small>Autonomous Runtime</small></div>
+        </div>
+        <div class="stat anim" style="--d: 0.74s">
+          <span class="stat-symbol" aria-hidden="true">#</span>
+          <div class="stat-copy"><strong data-counter data-target="2.4" data-decimals="1">0</strong><span class="stat-suffix">M</span><small>Context Windows</small></div>
+        </div>
+      </footer>
+    </div>
+
+    <section class="case-study" id="case-studies" aria-labelledby="case-study-title">
+      <div class="case-study-inner">
+        <div class="case-study-heading">
+          <div class="case-study-heading-copy">
+            <p class="case-study-eyebrow"><span aria-hidden="true"></span>Case study / telecom × energy</p>
+            <h2 id="case-study-title">A safer way to<br /><em>follow the load.</em></h2>
+          </div>
+          <p class="case-study-intro">
+            GridPulse turns a bounded, city-local simulation into an explainable operating story: forecast demand,
+            respond to pressure, and keep a conceptual coverage floor visible while capacity steps down.
+          </p>
+        </div>
+
+        <div class="case-study-meta" aria-label="Simulation setup">
+          <span><strong>14</strong> simulated days</span>
+          <span><strong>03</strong> synthetic cities</span>
+          <span><strong>09</strong> towers</span>
+          <span><strong>60 min</strong> intervals</span>
+          <span><strong>42</strong> deterministic seed</span>
+        </div>
+
+        <div class="case-study-results">
+          <article class="case-card outcome-card">
+            <div class="case-card-top">
+              <span class="case-card-label">Outcome / held-out window</span>
+              <span class="case-card-status"><i aria-hidden="true"></i>bounded replay</span>
+            </div>
+            <div class="outcome-lockup">
+              <strong>21.6%</strong>
+              <span>lower modeled<br />energy use</span>
+            </div>
+            <p>
+              The adaptive controller used less modeled energy than an always-on baseline while preserving
+              <strong>100.0% synthetic demand service</strong> in the evaluation window.
+            </p>
+            <div class="energy-compare" aria-label="Modeled energy comparison">
+              <div class="energy-line">
+                <span>Always-on baseline</span>
+                <strong>8,552 <small>kWh</small></strong>
+                <div class="energy-bar"><span class="energy-bar-fill energy-bar-baseline"></span></div>
+              </div>
+              <div class="energy-line">
+                <span>Adaptive controller</span>
+                <strong>6,705 <small>kWh</small></strong>
+                <div class="energy-bar"><span class="energy-bar-fill energy-bar-adaptive"></span></div>
+              </div>
+            </div>
+            <div class="outcome-foot"><span>Safety violations</span><strong>0</strong><span class="outcome-foot-note">in this run</span></div>
+          </article>
+
+          <article class="case-card method-card">
+            <div class="case-card-top">
+              <span class="case-card-label">01 / Model loop</span>
+              <span class="case-card-index">GridPulse</span>
+            </div>
+            <h3>Forecast. Detect. Adapt.</h3>
+            <p>The prototype keeps each decision traceable, so a mode change can be read back to the signal that caused it.</p>
+            <ol class="method-list">
+              <li><span>01</span><div><strong>Generate</strong><small>Deterministic synthetic tower telemetry.</small></div></li>
+              <li><span>02</span><div><strong>Forecast</strong><small>Causal demand prediction with a future-only holdout.</small></div></li>
+              <li><span>03</span><div><strong>Protect</strong><small>Capacity changes with a nonzero conceptual floor.</small></div></li>
+            </ol>
+          </article>
+        </div>
+
+        <div class="case-study-detail-grid">
+          <article class="case-card peak-card">
+            <div class="case-card-top">
+              <span class="case-card-label">02 / Demand profile</span>
+              <span class="case-card-index">24-hour average</span>
+            </div>
+            <h3>Two pressure windows.</h3>
+            <p>The synthetic demand curve rises into a morning crest, then reaches its strongest modeled load in the evening.</p>
+            <div class="peak-readouts">
+              <div class="peak-readout"><strong>09:00</strong><span>140.3 Mbps</span><small>morning crest</small></div>
+              <div class="peak-readout peak-readout-highlight"><strong>20:00</strong><span>152.5 Mbps</span><small>highest modeled load</small></div>
+            </div>
+            <div class="peak-chart" aria-hidden="true">
+              <span class="peak-curve"></span>
+              <span class="peak-marker peak-marker-morning"><i></i><b>09</b></span>
+              <span class="peak-marker peak-marker-evening"><i></i><b>20</b></span>
+            </div>
+            <div class="peak-axis" aria-hidden="true"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div>
+            <p class="case-card-note">Hours are simulation-clock labels; no live network or timezone claim is implied.</p>
+          </article>
+
+          <article class="case-card risk-card">
+            <div class="case-card-top">
+              <span class="case-card-label">03 / Risk zones</span>
+              <span class="case-card-index">5 × 5 local grid</span>
+            </div>
+            <h3>Where synthetic coverage thinned.</h3>
+            <p>These city-local zones recorded lower service headroom when primary capacity faulted or the model leaned on backup capacity. It is a synthetic availability signal, not RF coverage.</p>
+            <div class="risk-zones">
+              <div class="risk-zone">
+                <div class="risk-zone-head"><strong>City-03</strong><span>T01–T03 tower zones</span></div>
+                <div class="risk-map risk-map-upper" aria-hidden="true"></div>
+                <div class="risk-zone-value"><strong>70</strong><span>at-risk cell intervals</span><small>recurring fault-linked cells</small></div>
+              </div>
+              <div class="risk-zone">
+                <div class="risk-zone-head"><strong>City-01</strong><span>T01–T03 tower zones</span></div>
+                <div class="risk-map risk-map-lower" aria-hidden="true"></div>
+                <div class="risk-zone-value"><strong>48</strong><span>at-risk cell intervals</span><small>recurring fault-linked cells</small></div>
+              </div>
+              <div class="risk-zone">
+                <div class="risk-zone-head"><strong>City-02</strong><span>T03 tower zone</span></div>
+                <div class="risk-map risk-map-lower" aria-hidden="true"></div>
+                <div class="risk-zone-value"><strong>14</strong><span>at-risk cell intervals</span><small>intermittent fault-linked cells</small></div>
+              </div>
+            </div>
+            <p class="case-card-note">0 uncovered cell intervals in this run. Grid rows are local simulation coordinates, not geographic areas.</p>
+          </article>
+        </div>
+
+        <div class="case-study-disclaimer">
+          <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+          <p><strong>Read the result in context.</strong> Every value above comes from deterministic synthetic telemetry and a modeled power ledger. “Coverage” is a cell-availability proxy; this experience does not estimate RF propagation, signal strength, subscriber reach, an SLA, a live network, or an operator’s electricity bill.</p>
+          <a class="case-study-link" href="lab.html">Replay the lab <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <button class="menu-scrim" type="button" aria-label="Close navigation" data-menu-close></button>
+      <nav class="menu-sheet" aria-label="Mobile navigation">
+        <a class="is-active" href="#home">Home</a>
+        <a href="lab.html">Product</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#contact">Contact</a>
+        <a class="mobile-sign-in" href="#contact">Sign in</a>
+      </nav>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-hidden="true"></div>
+    <script src="main.js"></script>
+  </body>
+</html>

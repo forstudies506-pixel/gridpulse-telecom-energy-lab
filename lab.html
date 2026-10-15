@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#05070a" />
+    <meta name="description" content="GridPulse synthetic industry intelligence lab." />
+    <title>GridPulse Lab — Intelligence For Industries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos" rel="stylesheet" />
+    <link rel="stylesheet" href="lab.css" />
+  </head>
+  <body>
+    <div class="lab-bg" aria-hidden="true">
+      <video class="lab-bg-video" autoplay muted loop playsinline preload="metadata">
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260809_012548_ef22562c-c0ae-4816-ad9d-f8922af4e6a7.mp4" type="video/mp4" />
+      </video>
+      <div class="lab-bg-shade"></div>
+      <div class="lab-bg-pattern"></div>
+    </div>
+    <div class="lab-shell">
+      <header class="lab-header">
+        <a class="lab-logo-button" href="index.html" aria-label="Back to Intelligence For Industries">
+          <img src="assets/logo.webp" alt="" width="52" height="52" />
+        </a>
+        <nav class="lab-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a class="is-active" href="lab.html">Product</a>
+          <a href="index.html#case-studies">Case Studies</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <a class="lab-sign-in" href="index.html">Back to site</a>
+      </header>
+
+      <main>
+        <section class="lab-hero">
+          <div>
+            <p class="lab-eyebrow">Industry intelligence / telecom energy control</p>
+            <h1>See the network<br /><em>think ahead.</em></h1>
+            <p class="lab-lede">Run a bounded synthetic city, watch tower demand evolve, and inspect coverage gaps, telemetry faults, and the technical-response queue.</p>
+          </div>
+          <form class="lab-controls" id="lab-form">
+            <div class="lab-card-top"><span class="lab-eyebrow">Simulation controls</span><span id="lab-status" class="lab-status">ready</span></div>
+            <div class="lab-fields">
+              <label><span>Seed</span><input name="seed" type="number" min="0" max="999999" value="42" /></label>
+              <label><span>Days</span><input name="days" type="number" min="1" max="30" value="2" /></label>
+              <label><span>Cities</span><input name="cities" type="number" min="1" max="6" value="2" /></label>
+              <label><span>Towers / city</span><input name="towers_per_city" type="number" min="1" max="8" value="3" /></label>
+              <label class="wide"><span>Telemetry fault chance <b id="fault-label">0.5%</b></span><input name="fault_probability" type="range" min="0" max="0.05" step="0.001" value="0.005" /></label>
+            </div>
+            <div class="lab-actions"><button class="lab-primary" type="submit">Run lab <span>↗</span></button><button class="lab-secondary" id="lab-surge" type="button">Demo user surge <span>⌁</span></button></div>
+            <p class="lab-error" id="lab-error" role="alert"></p>
+          </form>
+        </section>
+
+        <section class="lab-metrics" aria-live="polite">
+          <article><span>Adaptive savings</span><strong id="metric-savings">—</strong><small>vs always-on baseline</small></article>
+          <article><span>Coverage now</span><strong id="metric-coverage">—</strong><small>primary + backup cells</small></article>
+          <article><span>Telemetry faults</span><strong id="metric-faults">—</strong><small>synthetic validation cases</small></article>
+          <article><span>Response incidents</span><strong id="metric-incidents">—</strong><small>simulation-only queue</small></article>
+        </section>
+
+        <section class="lab-grid playback-grid" aria-label="Simulation playback">
+          <article class="lab-panel playback-card">
+            <div class="panel-top">
+              <div><p class="lab-eyebrow">Live simulation playback</p><h2>Move through the run.</h2></div>
+              <span class="sim-only" id="playback-status">waiting</span>
+            </div>
+            <div class="playback-controls" role="group" aria-label="Playback controls">
+              <button class="lab-primary playback-button" id="playback-start" type="button" disabled>Start <span>▶</span></button>
+              <button class="lab-secondary playback-button" id="playback-pause" type="button" disabled>Pause <span>Ⅱ</span></button>
+              <button class="lab-secondary playback-button" id="playback-reset" type="button" disabled>Reset <span>↺</span></button>
+              <label class="playback-speed"><span>Speed</span><select id="playback-speed" disabled><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option><option value="8">8×</option></select></label>
+            </div>
+            <div class="profile-wrap">
+              <div class="profile-heading"><span>Demand profile / forecast</span><b id="profile-interval">waiting for run</b></div>
+              <div class="profile-plot" aria-label="Synthetic demand profile with animated time cursor">
+                <canvas id="profile-chart" role="img" aria-label="Synthetic demand and forecast profile"></canvas>
+                <span class="profile-cursor" id="profile-cursor" aria-hidden="true"></span>
+              </div>
+              <div class="profile-labels"><time id="profile-start">—</time><time id="profile-end">—</time></div>
+              <p class="profile-legend"><span class="profile-key actual"></span> demand <span class="profile-key forecast"></span> forecast <span id="profile-cursor-label">cursor at —</span></p>
+            </div>
+            <label class="playback-scrub"><span><span>Inspect interval</span><b id="playback-position">No replay loaded</b></span><input id="playback-scrubber" type="range" min="0" max="0" value="0" step="1" disabled /></label>
+            <div class="live-readout" aria-live="polite">
+              <div><span>Timestamp</span><strong id="live-timestamp">—</strong><small id="live-timezone">Asia/Kolkata</small></div>
+              <div><span>Active users</span><strong id="live-users">—</strong><small>selected city</small></div>
+              <div><span>Demand</span><strong id="live-demand">—</strong><small id="live-forecast">forecast —</small></div>
+              <div><span>Coverage</span><strong id="live-coverage">—</strong><small id="live-coverage-detail">waiting for interval</small></div>
+            </div>
+            <p class="lab-note">Playback is local to this browser after one synthetic run. Watch active users, demand, and synthetic coverage move together: the controller protects headroom first, then exposes the modeled energy trade-off for planning. Start, pause, reset, speed, and the interval cursor do not fetch additional data.</p>
+          </article>
+
+          <aside class="lab-panel event-card">
+            <div class="panel-top"><div><p class="lab-eyebrow">Chronological signal log</p><h2>Faults and events.</h2></div><span class="sim-only" id="event-count">0 records</span></div>
+            <p class="event-stream-summary" id="event-stream-summary">Run the lab to inspect every relevant synthetic fault, event, spike, and coverage issue.</p>
+            <div class="event-stream" id="event-stream" role="list" aria-label="Chronological synthetic fault and event stream" tabindex="0">
+              <div class="event-stream-spacer" id="event-stream-spacer"></div>
+              <div class="event-stream-list" id="event-stream-list"></div>
+              <p class="empty-state event-stream-empty" id="event-stream-empty">Run the lab to load the chronological stream.</p>
+            </div>
+            <p class="lab-note">Every record carries its source timestamp, city, affected tower, and a deterministic simulation remedy. Scroll the stream to inspect the full run.</p>
+          </aside>
+        </section>
+
+        <section class="lab-grid">
+          <article class="lab-panel coverage-card">
+            <div class="panel-top"><div><p class="lab-eyebrow">Coverage intelligence</p><h2>Where service is holding.</h2></div><label class="city-picker"><span>City</span><select id="city-select"><option value="">Run a lab first</option></select></label></div>
+            <div class="coverage-readout"><div><span>covered</span><strong id="covered-cells">—</strong></div><div><span>at risk</span><strong id="risk-cells">—</strong></div><div><span>uncovered</span><strong id="uncovered-cells">—</strong></div></div>
+            <div class="coverage-grid" id="coverage-grid" aria-label="Synthetic coverage cells"><p class="empty-state">Run the lab to render the city-local coverage grid.</p></div>
+            <p class="lab-note" id="coverage-note">Synthetic availability proxy only. This does not estimate RF propagation, signal strength, geographic radius, subscriber reach, or an SLA.</p>
+          </article>
+
+          <aside class="lab-panel response-card">
+           <div class="panel-top"><div><p class="lab-eyebrow">Technical response</p><h2>Move on the signal.</h2></div><span class="sim-only">simulation only</span></div>
+           <div class="response-summary"><span><b id="fault-count">—</b> faults</span><span><b id="incident-count">—</b> incidents</span></div>
+           <div class="dispatches" id="dispatches"><p class="empty-state">Response-team simulations will appear here.</p></div>
+            <div class="response-actions"><button class="lab-secondary" id="deploy-help-team" type="button" disabled>Deploy help team <span>↗</span></button><p class="deploy-status" id="deploy-status">A help-team simulation will become available for a coverage-related issue in the run.</p></div>
+            <p class="lab-note">The queue is deterministic and local. Deploy help team updates this UI/status only; it does not contact or direct real people, vehicles, emergency services, network equipment, or external systems.</p>
+          </aside>
+        </section>
+
+        <section class="lab-panel tower-card">
+          <div class="panel-top"><div><p class="lab-eyebrow">Latest interval</p><h2>Tower response matrix.</h2></div><span class="sim-only" id="run-detail">waiting for simulation</span></div>
+          <div class="tower-table-wrap"><table><thead><tr><th>Tower</th><th>Demand / forecast</th><th>Capacity</th><th>Mode</th><th>Signal</th></tr></thead><tbody id="tower-rows"><tr><td colspan="5" class="empty-cell">Run the lab to load tower states.</td></tr></tbody></table></div>
+        </section>
+      </main>
+
+      <footer class="lab-footer"><span>GridPulse Lab / Intelligence For Industries</span><span>synthetic data · no live controls</span></footer>
+    </div>
+    <script src="lab.js"></script>
+  </body>
+</html>
